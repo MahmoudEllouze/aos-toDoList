@@ -17,22 +17,12 @@ This project has been made for a test in an interview
 
 Install `nodejs`.
 
-
-```
-yarn install
-yarn dev
-```
-This will run the application locally on port 3000. To access the graphQL playground, navigate to:
-```sh
-http://localhost:3000/graphql
-```
-
 # Installation
 
 ## Manual Installation
 ```
-git clone
-cd
+git clone https://github.com/MahmoudEllouze/aos-toDoList.git
+cd aos-toDoList
 ```
 Install the dependencies:
 ```
@@ -42,18 +32,21 @@ Set the environment variables (optional):
 ```
 cp .env.example .env
 ```
-# open .env and modify the environment variables (if needed)
+open .env and modify the environment variables (if needed)
 Run the application
 ```
 npm run start
 ```
-
+This will run the application locally on port 3000 (by default). To access the graphQL playground, navigate to:
+```sh
+http://localhost:3000/graphql
+```
 
 ## Docker
 ### Docker Pull Command
 To get the project image from the docker hub  you can pull the image by using this command
 ``` 
-docker pull
+docker pull mahmouddockerid/tasks-aos
 ```
 ### Run using Docker compose
 
@@ -63,5 +56,5 @@ docker-compose up
 Verify the deployment by navigating to your server address in your preferred browser.
 
 ```sh
-localhost:3000/graphql
+http://localhost:3000/graphql
 ```
