@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  tasks-aos:
+    container_name: tasks-aos
+    image: mahmouddockerid/tasks-aos:1.0
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - DATABASE_HOST=mongo
+      - PORT=3000
+    ports:
+      - '3000:3000'
+    depends_on: 
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data: {}

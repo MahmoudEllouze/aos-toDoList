@@ -1,0 +1,36 @@
+
+type Task {
+  id: ID!
+  name: String!
+  description : String!
+  isDone: Boolean!
+  ownerId: User!
+  sharedWith: [ID!]
+}
+
+input TaskType {
+  name: String!
+  description: String!
+  isDone: Boolean!
+  sharedWith : [ID!]
+}
+
+input UpdateTask {
+  name: String
+  description: String
+  isDone: Boolean
+  sharedWith : [ID!]
+}
+
+type Query {
+  tasks: [Task!]
+  myTasks: [Task!]
+  sharedTasks: [Task!]
+  showTask(id: String!): Task!
+}
+
+type Mutation {
+  createTask(task: TaskType!): Task
+  updateTask(id: String!, task: UpdateTask!): Task
+  deleteTask(id: String!): Task
+}

@@ -1,0 +1,20 @@
+
+type Comment {
+  id: ID!
+  text: String!
+  taskId : Task!
+  ownerId: User!
+}
+
+input CommentType {
+  text: String!
+  taskId : String!
+}
+
+type Query {
+  getCommentsByTask(taskId:String!): [Comment!]
+}
+
+type Mutation {
+  addComment(comment: CommentType!): Comment
+}
