@@ -9,6 +9,8 @@ import { APP_INTERCEPTOR, APP_FILTER } from '@nestjs/core';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
 import { CommentModule } from './comment/comment.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 const host = process.env.DATABASE_HOST || 'localhost';
 @Module({
@@ -28,9 +30,10 @@ const host = process.env.DATABASE_HOST || 'localhost';
     TaskModule,
     CommentModule,
   ],
-  controllers: [],
+  controllers: [AppController],
 
   providers: [
+    AppService,
     /**
      * Adding an interceptor for every mutation and querries calls and log it in the console
      */

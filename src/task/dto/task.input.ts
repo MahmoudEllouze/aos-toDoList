@@ -8,7 +8,6 @@ import {
 } from 'class-validator';
 import { Field, InputType } from 'type-graphql';
 import { ObjectID } from 'mongodb';
-import * as mongoose from 'mongoose';
 
 @InputType()
 export class createTaskType {

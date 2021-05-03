@@ -16,7 +16,7 @@ describe('Users (e2e)', () => {
       imports: [
         UserModule,
         AuthModule,
-        TaskModule,
+
         MongooseModule.forRoot(`mongodb://${host}/nestgraphqltesting`),
         GraphQLModule.forRoot({
           typePaths: ['./**/*.graphql'],
@@ -211,17 +211,17 @@ describe('Users (e2e)', () => {
       .expect(200);
   });
 
-  it('create task', () => {
-    return request(app.getHttpServer())
-      .post('/graphql')
-      .set('Authorization', `Bearer ${token}`)
-      .send({
-        operationName: null,
-        query: createTaskQuery,
-      })
-      .expect(({ body }) => {
-        console.log(body)
-      })
-      .expect(400);
-  });
+  // it('create task', () => {
+  //   return request(app.getHttpServer())
+  //     .post('/graphql')
+  //     .set('Authorization', `Bearer ${token}`)
+  //     .send({
+  //       operationName: null,
+  //       query: createTaskQuery,
+  //     })
+  //     .expect(({ body }) => {
+  //       console.log(body)
+  //     })
+  //     .expect(400);
+  // });
 });

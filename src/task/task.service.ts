@@ -1,8 +1,7 @@
 import {
   Injectable,
   HttpException,
-  HttpStatus,
-  ForbiddenException,
+  HttpStatus
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -12,7 +11,6 @@ import { UpdateTaskInput } from './dto/task.input';
 import { User } from 'src/types/user';
 import { AuthenticationError } from 'apollo-server-core';
 import { UserRoles } from 'src/shared/user-roles';
-
 @Injectable()
 export class TaskService {
   constructor(
